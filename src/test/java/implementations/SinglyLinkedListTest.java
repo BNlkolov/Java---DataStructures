@@ -10,13 +10,10 @@ public class SinglyLinkedListTest {
 
     @Before
     public void setUp() {
-        try {
-            this.list = new SinglyLinkedList<>();
-            for (int i = 0; i < 100; i++) {
-                list.addLast(String.valueOf(i));
-            }
-        } catch (Exception ignored) {
-            this.list = new SinglyLinkedList<>();
+
+        this.list = new SinglyLinkedList<>();
+        for (int i = 0; i < 100; i++) {
+            list.addLast(String.valueOf(i));
         }
     }
 
@@ -84,5 +81,13 @@ public class SinglyLinkedListTest {
     public void testIsEmpty() {
         assertFalse(list.isEmpty());
         assertTrue(new SinglyLinkedList<>().isEmpty());
+    }
+
+    @Test
+    public void testIterator(){
+        int count = 0;
+        for (String s : list) {
+            assertEquals(s,String.valueOf(count++));
+        }
     }
 }
