@@ -48,7 +48,6 @@ public class Stack<E> implements AbstractStack<E> {
         return this.top.value;
     }
 
-
     @Override
     public int size() {
         return this.size;
